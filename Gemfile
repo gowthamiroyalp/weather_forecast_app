@@ -6,8 +6,6 @@ gem "rails", "~> 8.0.1"
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
 # gem "sqlite3", ">= 2.1"
-# Use PostgreSQL as the database for Active Record
-gem 'pg', '~> 1.5', '>= 1.5.9'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
@@ -18,8 +16,32 @@ gem "turbo-rails"
 gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
+# Use PostgreSQL as the database for Active Record
+gem 'pg', '~> 1.5', '>= 1.5.9'
 # rspec test cases
 gem 'rspec'
+# http requests handling
+gem 'httparty'
+# autoload env var
+gem 'dotenv-rails'
+# caching
+gem 'redis'
+
+# --- CSS Setup (Rails 8 default using Propshaft + CSS bundling) ---
+# Using Dart Sass via cssbundling-rails instead of sassc-rails or sprockets
+gem 'cssbundling-rails'
+
+# After bundle/installing this gem, run:
+#   rails css:install:sass
+#   npm install bootstrap
+#
+# This installs Dart Sass and configures app/assets/stylesheets
+# Bootstrap is installed via npm, and imported in application.sass or .scss
+# Can also install Popper (used for tooltips/dropdowns):
+# npm install @popperjs/core 
+
+
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -65,3 +87,10 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+group :development, :test do
+  gem 'pry'
+  gem 'pry-rails'     # Enhances Rails console
+  gem 'pry-byebug'    # Step-by-step debugging
+end
+
