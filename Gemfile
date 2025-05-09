@@ -27,6 +27,10 @@ gem 'httparty'
 gem 'dotenv-rails'
 # caching
 gem 'redis'
+gem 'sidekiq'
+gem 'rspec-rails'
+gem 'rails-controller-testing'
+
 
 # --- CSS Setup (Rails 8 default using Propshaft + CSS bundling) ---
 # Using Dart Sass via cssbundling-rails instead of sassc-rails or sprockets

@@ -1,3 +1,4 @@
+<!-- app/views/home/index.html.erb -->
 <h1>Weather Forecast</h1>
 
 <%= form_with url: root_path, method: :get, local: true do %>
@@ -16,8 +17,6 @@
   <hr>
   <h3>Forecast for <%= @forecast.city %></h3>
   <p><strong>Current Temp:</strong> <%= @forecast.temperature %></p>
-  <p><strong>High:</strong> <%= @forecast.high %></p>
-  <p><strong>Low:</strong> <%= @forecast.low %></p>
   <p><strong>Description:</strong> <%= @forecast.description %></p>
   <% if @from_cache %>
     <p style="color: green;"><em>Result served from cache</em></p>

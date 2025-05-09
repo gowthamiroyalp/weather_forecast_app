@@ -1,25 +1,18 @@
 class WeatherDecorator
   def initialize(raw_data)
     @data = raw_data
+    @weather_info = @data.dig('data', 0) || {}
   end
 
   def temperature
-    "#{@data.dig('main', 'temp')}°F"
-  end
-
-  def high
-    "#{@data.dig('main', 'temp_max')}°F"
-  end
-
-  def low
-    "#{@data.dig('main', 'temp_min')}°F"
+    "#{@weather_info['temp']}°C" if @weather_info['temp']
   end
 
   def description
-    @data.dig('weather', 0, 'description')&.capitalize
+    @weather_info.dig('weather', 'description')&.capitalize
   end
 
   def city
-    @data['name']
+    @weather_info['city_name']
   end
 end
