@@ -7,7 +7,6 @@ class GeocodingService
   end
 
   def zip_code
-    # binding.pry
     response = self.class.get('/json', query: {
       key: ENV['OPENCAGE_API_KEY'],
       q: @address

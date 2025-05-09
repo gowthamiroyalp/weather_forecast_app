@@ -4,7 +4,6 @@ class HomeController < ApplicationController
 
     @address = params[:address]
     zip_code = GeocodingService.new(@address).zip_code
-    binding.pry
 
     if zip_code
       weather_service = WeatherService.new(zip_code)

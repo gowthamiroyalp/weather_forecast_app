@@ -43,7 +43,7 @@ Whether Forecast ROR application
 	bundle rspec	
 
 # Public GitHub repository url/link with specific feature branch:
-https://github.com/gowthamiroyalp/weather_forecast_app.git
+https://github.com/gowthamiroyalp/weather_forecast_app
 
 
 

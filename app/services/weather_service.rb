@@ -7,12 +7,9 @@ class WeatherService
   end
 
   def fetch_forecast
-    binding.pry
-    # http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}
-
     Rails.cache.fetch(cache_key, expires_in: 30.minutes) do
       self.class.get('/weather', query: {
-        zip: "#{@zip},us",  # append country code here
+        zip: "#{@zip},us",
         units: 'imperial',
         appid: ENV['OPENWEATHERMAP_API_KEY']
       }).parsed_response
